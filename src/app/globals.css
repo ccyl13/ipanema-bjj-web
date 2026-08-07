@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-script: var(--font-caveat);
+
+  /* Dark, near-black base — matches the academy's real ceiling/walls */
+  --color-ink: #0a0b09;
+  --color-ink-2: #12140f;
+  --color-ink-3: #1b1e16;
+
+  /* Light "tatami white" for contrast sections */
+  --color-paper: #f6f4ee;
+  --color-paper-2: #ece8dd;
+
+  /* Accents sampled from the academy's real neon sign (teal -> lime) */
+  --color-teal: #2fe6c4;
+  --color-teal-dim: #1c9c86;
+  --color-lime: #a4e635;
+  --color-lime-dim: #7ab61f;
+
+  /* Warm oak-wood accent from the reception panelling */
+  --color-wood: #c99a63;
+  --color-wood-dim: #8a6a44;
+
+  --color-line: rgba(255, 255, 255, 0.1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: var(--color-ink);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-teal);
+  color: #04231d;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-teal) 0%,
+    var(--color-lime) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Outlined numerals for the Programas list, ghost-style until hovered. */
+.number-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-teal);
+  transition:
+    color 0.35s ease,
+    -webkit-text-stroke 0.35s ease;
+}
+.group:hover .number-outline {
+  color: var(--color-teal);
+}
+
+::selection {
+  background: var(--color-teal);
+  color: #04231d;
+}
+
+/* Subtle film-grain overlay across the whole page — breaks up the flat
+   dark sections so it reads as designed, not a stock dark-mode template. */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Subtle scrollbar for horizontally-scrollable tables/rows */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-teal-dim);
+  border-radius: 999px;
+}
