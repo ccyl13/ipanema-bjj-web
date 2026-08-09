@@ -50,8 +50,7 @@ export function Gallery() {
               Un espacio pensado para entrenar en serio
             </p>
             <p className="mt-3 text-white/60">
-              Tatami amplio, vestuarios, duchas y una nevera con bebidas
-              frías y barritas de proteína para cuando terminas la clase.
+              Tatami amplio, vestuarios y duchas.
             </p>
           </div>
           <p className="text-sm text-white/50">

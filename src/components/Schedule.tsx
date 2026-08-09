@@ -24,6 +24,19 @@ const tagCellStyles: Record<ClassTag, string> = {
   OPEN: "bg-white/[0.03] border-l-white/15 text-white/40",
 };
 
+// Solid, full-opacity dots for the legend — the cell tints above are
+// deliberately faint (they're backgrounds), but a 10%-opacity dot at 10px
+// reads as barely-there, so the legend gets its own vivid palette.
+const tagDotStyles: Record<ClassTag, string> = {
+  AL: "bg-teal",
+  K: "bg-lime",
+  W: "bg-pink-400",
+  F: "bg-wood",
+  A: "bg-orange-400",
+  PRIVATE: "bg-white/60",
+  OPEN: "border-2 border-white/40",
+};
+
 export function Schedule() {
   return (
     <section id="horarios" className="bg-ink-2 py-24 sm:py-32">
@@ -102,7 +115,7 @@ export function Schedule() {
               className="flex items-center gap-1.5 text-xs text-white/45"
             >
               <span
-                className={`h-2.5 w-2.5 rounded-full ${tagCellStyles[l.tag].split(" ")[0]}`}
+                className={`h-2.5 w-2.5 rounded-full ${tagDotStyles[l.tag]}`}
               />
               {l.label}
             </span>

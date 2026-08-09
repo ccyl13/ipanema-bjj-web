@@ -96,11 +96,6 @@ export const gallery = [
     caption: "Coffee bar",
   },
   {
-    src: "/images/bebidas-nevera.jpg",
-    alt: "Nevera con bebidas frías e isotónicas para después de entrenar",
-    caption: "Bebidas y barritas Warrior",
-  },
-  {
     src: "/images/pasillo-taquillas.jpg",
     alt: "Pasillo con taquillas y zona de descanso",
     caption: "Taquillas",
@@ -116,6 +111,25 @@ export const gallery = [
     caption: "Pared de logos",
   },
 ];
+
+export const recovery = {
+  kicker: "Después de entrenar",
+  heading: "No todo termina en el tatami",
+  intro:
+    "En Ipanema la experiencia te acompaña incluso después de entrenar. Tienes café recién hecho, una selección de bebidas refrescantes e isotónicas y algo con lo que reponer fuerzas antes de irte.",
+  items: [
+    {
+      image: "/images/bebidas-nevera.jpg",
+      title: "Bebidas frías e isotónicas",
+      text: "Nevera siempre surtida con NOCCO, Vitamin Well y batidos, para recuperar electrolitos después del esfuerzo.",
+    },
+    {
+      image: "/images/warrior-flapjack.jpg",
+      title: "Barritas de proteína Warrior",
+      text: "Raw Protein Flapjack: 20 g de proteína y menos de 4 g de azúcar por barrita, para un buen empujón de energía sin el bajón posterior.",
+    },
+  ],
+};
 
 export type Program = {
   slug: string;

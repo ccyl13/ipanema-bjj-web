@@ -17,10 +17,10 @@ export function Programs() {
         <div className="mt-14 divide-y divide-line border-y border-line">
           {programs.map((program, i) => (
             <Reveal key={program.slug} delay={i * 0.07}>
-              <div className="group grid grid-cols-[3.5rem_1fr] items-start gap-x-5 gap-y-3 py-9 sm:grid-cols-[5rem_1fr] sm:gap-x-8 sm:py-10 lg:grid-cols-[6rem_1fr_auto] lg:items-center">
+              <div className="group grid grid-cols-[3.5rem_1fr] items-center gap-x-5 gap-y-3 rounded-xl px-3 py-9 -mx-3 transition-colors hover:bg-ink-2 sm:grid-cols-[5rem_1fr] sm:gap-x-8 sm:py-10">
                 <span
                   aria-hidden
-                  className="number-outline font-sans text-5xl leading-none font-bold sm:text-6xl"
+                  className="number-outline font-sans text-5xl leading-none font-bold transition-transform duration-300 group-hover:translate-x-1 sm:text-6xl"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -32,17 +32,16 @@ export function Programs() {
                   <p className="mt-2 max-w-xl text-white/65">
                     {program.description}
                   </p>
-                </div>
-
-                <div className="col-span-2 flex flex-wrap gap-x-2 gap-y-1 pl-[calc(3.5rem+1.25rem)] text-xs font-semibold tracking-wide text-white/45 uppercase sm:pl-[calc(5rem+2rem)] lg:col-span-1 lg:justify-self-end lg:pl-0 lg:text-right">
-                  {program.bullets.map((bullet, j) => (
-                    <span key={bullet}>
-                      {bullet}
-                      {j < program.bullets.length - 1 && (
-                        <span className="mx-2 text-teal">·</span>
-                      )}
-                    </span>
-                  ))}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {program.bullets.map((bullet) => (
+                      <span
+                        key={bullet}
+                        className="rounded-full border border-line bg-ink px-3 py-1 text-xs font-semibold tracking-wide text-white/60 uppercase"
+                      >
+                        {bullet}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Reveal>
