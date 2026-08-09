@@ -38,8 +38,8 @@ export const contact = {
 };
 
 export const hero = {
-  title: "Ipanema BJJ",
-  titleSuffix: "Gijón",
+  title: "Ipanema",
+  titleSuffix: "BJJ Gijón",
   subtitle:
     "Jiu-Jitsu Brasileño para todos los niveles, en el corazón de Gijón. Técnica, comunidad y una primera clase gratis para que lo compruebes tú mismo.",
   ctaPrimary: { label: "Clase de prueba gratis", href: "/#contacto" },
