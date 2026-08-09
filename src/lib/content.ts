@@ -175,7 +175,8 @@ export const achievements = {
     "NTL Pro",
   ],
   affiliation: {
-    badge: "/images/mathias-ribeiro-emblema.jpg",
+    image: "/images/mathias-ribeiro-topuria.jpg",
+    imageAlt: "Mathias Ribeiro junto a Ilia Topuria, campeón de la UFC",
     heading: "El equipo detrás de un campeón de la UFC",
     text: "Mathias Ribeiro y Mani Tavanaei, fundadores del Mathias Ribeiro BJJ Team, son los entrenadores principales de grappling y Jiu-Jitsu brasileño de Ilia Topuria. Suyo es el trabajo de perfeccionar el juego de suelo, las sumisiones y el control posicional del campeón de la UFC.",
   },

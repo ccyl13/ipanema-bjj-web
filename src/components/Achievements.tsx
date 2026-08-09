@@ -43,14 +43,14 @@ export function Achievements() {
             ))}
           </ul>
 
-          <div className="mt-6 flex gap-4 rounded-2xl border border-wood/30 bg-ink px-5 py-5">
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-wood/40">
+          <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-wood/30 bg-ink p-4 sm:flex-row sm:items-center">
+            <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-xl sm:w-32">
               <Image
-                src={achievements.affiliation.badge}
-                alt="Escudo del Mathias Ribeiro BJJ Team"
+                src={achievements.affiliation.image}
+                alt={achievements.affiliation.imageAlt}
                 fill
-                sizes="56px"
-                className="object-cover"
+                sizes="(min-width: 640px) 128px, 100vw"
+                className="object-cover object-top"
               />
             </div>
             <div>
