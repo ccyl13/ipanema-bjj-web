@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Magnetic } from "./Magnetic";
 import { finalCta } from "@/lib/content";
 
 export function CTA() {
@@ -16,19 +17,23 @@ export function CTA() {
         </h2>
         <p className="mt-4 text-white/70">{finalCta.subtitle}</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href={finalCta.primary.href}
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal to-lime px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_0_30px_-6px_var(--color-teal)] transition-transform hover:scale-[1.03]"
-          >
-            {finalCta.primary.label}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            href={finalCta.secondary.href}
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal"
-          >
-            {finalCta.secondary.label}
-          </Link>
+          <Magnetic>
+            <Link
+              href={finalCta.primary.href}
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal to-lime px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_0_30px_-6px_var(--color-teal)] transition-transform hover:scale-[1.03]"
+            >
+              {finalCta.primary.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Magnetic>
+          <Magnetic>
+            <Link
+              href={finalCta.secondary.href}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal"
+            >
+              {finalCta.secondary.label}
+            </Link>
+          </Magnetic>
         </div>
       </Reveal>
     </section>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Trophy } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WaveDivider } from "./WaveDivider";
+import { TiltCard } from "./TiltCard";
 import { achievements } from "@/lib/content";
 
 export function Achievements() {
@@ -60,17 +61,23 @@ export function Achievements() {
             />
           </div>
 
-          <ul className="order-1 grid gap-3 sm:grid-cols-2 lg:order-2">
+          <div
+            role="list"
+            className="order-1 grid gap-3 sm:grid-cols-2 lg:order-2"
+          >
             {achievements.highlights.map((item) => (
-              <li
+              <TiltCard
                 key={item}
+                maxTilt={5}
                 className="flex items-center gap-3 rounded-xl border border-line bg-ink px-4 py-3.5 text-sm font-medium text-white/85"
               >
-                <Trophy className="h-4 w-4 shrink-0 text-lime" />
-                {item}
-              </li>
+                <span role="listitem" className="flex items-center gap-3">
+                  <Trophy className="h-4 w-4 shrink-0 text-lime" />
+                  {item}
+                </span>
+              </TiltCard>
             ))}
-          </ul>
+          </div>
         </Reveal>
       </div>
 

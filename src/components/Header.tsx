@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { clsx } from "clsx";
 import { Logo } from "./Logo";
+import { Magnetic } from "./Magnetic";
 import { nav, hero } from "@/lib/content";
 
 export function Header() {
@@ -56,12 +57,14 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <Link
-            href={hero.ctaPrimary.href}
-            className="rounded-full bg-gradient-to-r from-teal to-lime px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_0_20px_-4px_var(--color-teal)] transition-transform hover:scale-[1.03]"
-          >
-            {hero.ctaPrimary.label}
-          </Link>
+          <Magnetic strength={0.25}>
+            <Link
+              href={hero.ctaPrimary.href}
+              className="rounded-full bg-gradient-to-r from-teal to-lime px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_0_20px_-4px_var(--color-teal)] transition-transform hover:scale-[1.03]"
+            >
+              {hero.ctaPrimary.label}
+            </Link>
+          </Magnetic>
         </div>
 
         <button

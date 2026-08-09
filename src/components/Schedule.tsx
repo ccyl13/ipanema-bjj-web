@@ -1,36 +1,33 @@
-"use client";
-
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { schedule, scheduleLegend, type ClassTag } from "@/lib/content";
 
-const tagStyles: Record<ClassTag, string> = {
-  AL: "bg-teal/15 text-teal",
-  K: "bg-lime/15 text-lime",
-  W: "bg-pink-400/15 text-pink-400",
-  F: "bg-wood/20 text-wood",
-  A: "bg-orange-400/15 text-orange-400",
-  PRIVATE: "bg-white/10 text-white/70",
-  OPEN: "border border-dashed border-white/25 text-white/50",
-};
+const TIME_SLOTS = [
+  "08:00–09:30",
+  "11:00–12:30",
+  "14:15–15:45",
+  "17:30–18:15",
+  "18:15–19:00",
+  "19:00–20:30",
+  "20:30–22:00",
+  "22:00–22:30",
+];
 
-const dayShort: Record<string, string> = {
-  Lunes: "LUN",
-  Martes: "MAR",
-  Miércoles: "MIÉ",
-  Jueves: "JUE",
-  Viernes: "VIE",
-  Sábado: "SÁB",
+// Background tint + left accent per class type, so the whole week reads as
+// a colour pattern at a glance instead of a wall of identical grey cells.
+const tagCellStyles: Record<ClassTag, string> = {
+  AL: "bg-teal/10 border-l-teal text-teal",
+  K: "bg-lime/10 border-l-lime text-lime",
+  W: "bg-pink-400/10 border-l-pink-400 text-pink-400",
+  F: "bg-wood/10 border-l-wood text-wood",
+  A: "bg-orange-400/10 border-l-orange-400 text-orange-400",
+  PRIVATE: "bg-white/5 border-l-white/30 text-white/60",
+  OPEN: "bg-white/[0.03] border-l-white/15 text-white/40",
 };
 
 export function Schedule() {
-  const [active, setActive] = useState(0);
-  const day = schedule.days[active];
-
   return (
     <section id="horarios" className="bg-ink-2 py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <h2 className="text-xs font-bold tracking-[0.3em] text-teal uppercase">
             {schedule.heading}
@@ -40,71 +37,72 @@ export function Schedule() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-10">
-          <div
-            role="tablist"
-            aria-label="Días de la semana"
-            className="flex gap-2 overflow-x-auto pb-1"
-          >
-            {schedule.days.map((d, i) => (
-              <button
-                key={d.day}
-                role="tab"
-                aria-selected={i === active}
-                onClick={() => setActive(i)}
-                className={`shrink-0 rounded-full px-5 py-2.5 text-sm font-semibold tracking-wide transition-colors ${
-                  i === active
-                    ? "bg-gradient-to-r from-teal to-lime text-ink"
-                    : "bg-ink text-white/60 hover:text-white"
-                }`}
-              >
-                <span className="sm:hidden">{dayShort[d.day]}</span>
-                <span className="hidden sm:inline">{d.day}</span>
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-6 min-h-[120px] overflow-hidden rounded-2xl border border-line">
-            <AnimatePresence mode="wait">
-              <motion.ul
-                key={day.day}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-                className="divide-y divide-line"
-              >
-                {day.classes.map((c) => (
-                  <li
-                    key={c.time + c.name}
-                    className="flex flex-wrap items-center justify-between gap-3 bg-ink-2 px-5 py-4 odd:bg-ink"
+        <Reveal
+          delay={0.1}
+          className="scrollbar-thin mt-10 overflow-x-auto rounded-2xl border border-line"
+        >
+          <table className="w-full min-w-[880px] border-collapse text-sm">
+            <thead>
+              <tr>
+                <th className="sticky left-0 z-10 min-w-[110px] bg-ink px-4 py-4 text-left text-xs font-semibold tracking-wide text-white/50 uppercase">
+                  Hora
+                </th>
+                {schedule.days.map(({ day }) => (
+                  <th
+                    key={day}
+                    className="min-w-[130px] bg-ink px-3 py-4 text-left text-sm font-semibold text-teal"
                   >
-                    <div className="flex flex-wrap items-baseline gap-3">
-                      <span className="w-[110px] shrink-0 font-semibold text-white">
-                        {c.time}
-                      </span>
-                      <span className="text-white/75">{c.name}</span>
-                    </div>
-                    <span
-                      className={`rounded-full px-2.5 py-1 text-[11px] font-bold tracking-wide ${tagStyles[c.tag]}`}
-                    >
-                      {scheduleLegend.find((l) => l.tag === c.tag)?.label}
-                    </span>
-                  </li>
+                    {day}
+                  </th>
                 ))}
-              </motion.ul>
-            </AnimatePresence>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {TIME_SLOTS.map((time, i) => (
+                <tr key={time} className={i % 2 === 0 ? "bg-ink-2" : "bg-ink"}>
+                  <td
+                    className={`sticky left-0 z-10 px-4 py-3.5 font-semibold whitespace-nowrap text-white ${i % 2 === 0 ? "bg-ink-2" : "bg-ink"}`}
+                  >
+                    {time}
+                  </td>
+                  {schedule.days.map(({ day, classes }) => {
+                    const cls = classes.find((c) => c.time === time);
+                    return (
+                      <td key={day} className="p-0 align-top">
+                        {cls ? (
+                          <div
+                            className={`h-full border-l-2 px-3 py-3.5 ${tagCellStyles[cls.tag]}`}
+                            title={
+                              scheduleLegend.find((l) => l.tag === cls.tag)
+                                ?.label
+                            }
+                          >
+                            <p className="font-medium text-white">
+                              {cls.name}
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="h-full border-l-2 border-l-transparent px-3 py-3.5 text-white/15">
+                            —
+                          </div>
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </Reveal>
 
-        <Reveal delay={0.15} className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+        <Reveal delay={0.15} className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
           {scheduleLegend.map((l) => (
             <span
               key={l.tag}
               className="flex items-center gap-1.5 text-xs text-white/45"
             >
               <span
-                className={`h-2.5 w-2.5 rounded-full ${tagStyles[l.tag].split(" ")[0]}`}
+                className={`h-2.5 w-2.5 rounded-full ${tagCellStyles[l.tag].split(" ")[0]}`}
               />
               {l.label}
             </span>
