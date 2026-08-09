@@ -14,7 +14,7 @@ export function Logo({ className }: { className?: string }) {
         />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-script text-2xl leading-none text-white">
+        <span className="font-script text-2xl leading-[1.15] text-white">
           Ipanema BJJ
         </span>
         <span className="text-[10px] font-semibold tracking-[0.3em] text-teal uppercase">

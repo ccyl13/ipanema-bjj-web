@@ -32,7 +32,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="max-w-3xl text-6xl leading-[0.95] text-white sm:text-7xl md:text-8xl"
+          className="max-w-3xl text-6xl leading-[1.15] text-white sm:text-7xl md:text-8xl"
         >
           <span className="font-script text-gradient">{hero.title}</span>{" "}
           <span className="font-semibold">{hero.titleSuffix}</span>
