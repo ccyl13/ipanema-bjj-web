@@ -86,7 +86,7 @@ export function Footer() {
 
             {contact.phone !== PENDIENTE && (
               <a
-                href={`https://wa.me/${contact.phoneIntl.replace("+", "")}`}
+                href={contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal to-lime px-4 py-2 text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"

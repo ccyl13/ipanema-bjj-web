@@ -27,6 +27,7 @@ export const contact = {
   email: "info@academiabjj.com",
   phone: "683 62 71 13",
   phoneIntl: "+34683627113", // para tel: / wa.me, sin espacios
+  whatsappUrl: "https://wa.me/34683627113",
   address: "Calle Dindurra, 19, Centro, 33202 Gijón, Asturias",
   mapsUrl:
     "https://maps.google.com/?q=" +
@@ -124,7 +125,7 @@ export const recovery = {
       text: "Nevera siempre surtida con NOCCO, Vitamin Well y batidos, para recuperar electrolitos después del esfuerzo.",
     },
     {
-      image: "/images/warrior-flapjack.jpg",
+      image: "/images/warrior-flapjack.png",
       title: "Barritas de proteína Warrior",
       text: "Raw Protein Flapjack: 20 g de proteína y menos de 4 g de azúcar por barrita, para un buen empujón de energía sin el bajón posterior.",
     },
@@ -308,7 +309,7 @@ export const finalCta = {
   heading: "¿Listo para comenzar?",
   subtitle:
     "Únete a nuestra familia y descubre cómo el Jiu-Jitsu puede transformar tu vida. Tu primera clase es gratis.",
-  primary: { label: "Empezar ahora", href: "#contacto" },
+  primary: { label: "Empezar ahora", href: contact.whatsappUrl },
   secondary: { label: "Ver programas", href: "#programas" },
 };
 

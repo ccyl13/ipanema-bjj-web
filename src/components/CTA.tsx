@@ -20,6 +20,8 @@ export function CTA() {
           <Magnetic>
             <Link
               href={finalCta.primary.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal to-lime px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_0_30px_-6px_var(--color-teal)] transition-transform hover:scale-[1.03]"
             >
               {finalCta.primary.label}

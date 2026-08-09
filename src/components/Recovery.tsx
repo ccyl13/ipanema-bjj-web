@@ -24,13 +24,13 @@ export function Recovery() {
                 maxTilt={3}
                 className="overflow-hidden rounded-2xl border border-line bg-ink"
               >
-                <div className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden">
+                <div className="relative aspect-[3/4] w-full bg-ink">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(min-width: 640px) 320px, 80vw"
-                    className="object-cover"
+                    className="object-contain p-6"
                   />
                 </div>
                 <div className="p-6">
