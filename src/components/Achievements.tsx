@@ -42,6 +42,26 @@ export function Achievements() {
               </li>
             ))}
           </ul>
+
+          <div className="mt-6 flex gap-4 rounded-2xl border border-wood/30 bg-ink px-5 py-5">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-wood/40">
+              <Image
+                src={achievements.affiliation.badge}
+                alt="Escudo del Mathias Ribeiro BJJ Team"
+                fill
+                sizes="56px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="font-semibold text-white">
+                {achievements.affiliation.heading}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-white/60">
+                {achievements.affiliation.text}
+              </p>
+            </div>
+          </div>
         </Reveal>
       </div>
 

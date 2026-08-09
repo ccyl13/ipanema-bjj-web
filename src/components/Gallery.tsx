@@ -49,6 +49,10 @@ export function Gallery() {
             <p className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
               Un espacio pensado para entrenar en serio
             </p>
+            <p className="mt-3 text-white/60">
+              Tatami amplio, vestuarios, duchas y una nevera con bebidas
+              frías y barritas de proteína para cuando terminas la clase.
+            </p>
           </div>
           <p className="text-sm text-white/50">
             {String(index + 1).padStart(2, "0")} /{" "}

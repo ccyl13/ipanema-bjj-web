@@ -96,6 +96,11 @@ export const gallery = [
     caption: "Coffee bar",
   },
   {
+    src: "/images/bebidas-nevera.jpg",
+    alt: "Nevera con bebidas frías e isotónicas para después de entrenar",
+    caption: "Bebidas y barritas Warrior",
+  },
+  {
     src: "/images/pasillo-taquillas.jpg",
     alt: "Pasillo con taquillas y zona de descanso",
     caption: "Taquillas",
@@ -169,6 +174,11 @@ export const achievements = {
     "Madrid Cup BJJ",
     "NTL Pro",
   ],
+  affiliation: {
+    badge: "/images/mathias-ribeiro-emblema.jpg",
+    heading: "El equipo detrás de un campeón de la UFC",
+    text: "Mathias Ribeiro y Mani Tavanaei, fundadores del Mathias Ribeiro BJJ Team, son los entrenadores principales de grappling y Jiu-Jitsu brasileño de Ilia Topuria. Suyo es el trabajo de perfeccionar el juego de suelo, las sumisiones y el control posicional del campeón de la UFC.",
+  },
   image: "/images/medallas-pared.jpg",
 };
 
@@ -179,70 +189,98 @@ export const team = {
   image: "/images/equipo-grupo.jpg",
 };
 
-export type ScheduleRow = {
+// Horario real 2026, tomado directamente del cuadrante que usa la academia.
+export type ClassTag = "AL" | "K" | "W" | "F" | "A" | "PRIVATE" | "OPEN";
+
+export type ScheduleClass = {
   time: string;
-  cells: [string, string, string, string, string]; // Lun, Mar, Mié, Jue, Vie
+  name: string;
+  tag: ClassTag;
 };
+
+export const scheduleLegend: { tag: ClassTag; label: string }[] = [
+  { tag: "AL", label: "Todos los niveles" },
+  { tag: "K", label: "Kids" },
+  { tag: "W", label: "Mujeres" },
+  { tag: "F", label: "Fundamentos" },
+  { tag: "A", label: "Avanzado" },
+  { tag: "PRIVATE", label: "Clase privada" },
+  { tag: "OPEN", label: "Open Mat" },
+];
 
 export const schedule = {
   heading: "Horarios",
-  days: ["LUN", "MAR", "MIÉ", "JUE", "VIE"] as const,
-  rows: [
+  days: [
     {
-      time: "08:30–10:00",
-      cells: [
-        "BJJ Adultos (Gi)",
-        "BJJ Adultos (NO-GI)",
-        "BJJ Adultos (Gi)",
-        "BJJ Adultos (NO-GI)",
-        "BJJ Adultos (Gi)",
+      day: "Lunes",
+      classes: [
+        { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "11:00–12:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "14:15–15:45", name: "BJJ Lunch Kimono", tag: "AL" },
+        { time: "17:30–18:15", name: "Clase privada", tag: "PRIVATE" },
+        { time: "18:15–19:00", name: "Clase privada", tag: "PRIVATE" },
+        { time: "19:00–20:30", name: "Grupo Femenino", tag: "W" },
+        { time: "20:30–22:00", name: "BJJ Kimono", tag: "A" },
+        { time: "22:00–22:30", name: "Open Mat (Ipanema)", tag: "OPEN" },
       ],
     },
     {
-      time: "11:00–12:30",
-      cells: [
-        "BJJ Adultos (Gi)",
-        "BJJ Adultos (NO-GI)",
-        "Laboratorio",
-        "BJJ Adultos (NO-GI)",
-        "BJJ Adultos (Gi)",
+      day: "Martes",
+      classes: [
+        { time: "08:00–09:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "11:00–12:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "14:15–15:45", name: "BJJ Lunch NoGi", tag: "AL" },
+        { time: "17:30–18:15", name: "BJJ Kids Mini (4 a 7)", tag: "K" },
+        { time: "18:15–19:00", name: "BJJ Kids Junior (8 a 12)", tag: "K" },
+        { time: "19:00–20:30", name: "BJJ Kimono", tag: "F" },
+        { time: "20:30–22:00", name: "BJJ NoGi", tag: "A" },
       ],
     },
     {
-      time: "14:15–15:45",
-      cells: [
-        "BJJ Lunch (NO-GI)",
-        "BJJ Lunch (Gi)",
-        "BJJ Lunch (NO-GI)",
-        "BJJ Lunch (Gi)",
-        "BJJ Lunch (NO-GI)",
+      day: "Miércoles",
+      classes: [
+        { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "11:00–12:30", name: "BJJ Laboratorio", tag: "AL" },
+        { time: "14:15–15:45", name: "BJJ Lunch Kimono", tag: "AL" },
+        { time: "17:30–18:15", name: "Clase privada", tag: "PRIVATE" },
+        { time: "18:15–19:00", name: "Clase privada", tag: "PRIVATE" },
+        { time: "19:00–20:30", name: "BJJ NoGi", tag: "F" },
+        { time: "20:30–22:00", name: "BJJ Kimono", tag: "A" },
+        { time: "22:00–22:30", name: "Open Mat (Ipanema)", tag: "OPEN" },
       ],
     },
     {
-      time: "19:30–21:00",
-      cells: [
-        "BJJ Avanzado",
-        "BJJ Avanzado",
-        "BJJ Avanzado",
-        "BJJ Avanzado",
-        "Open Mat",
+      day: "Jueves",
+      classes: [
+        { time: "08:00–09:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "11:00–12:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "14:15–15:45", name: "BJJ Lunch NoGi", tag: "AL" },
+        { time: "17:30–18:15", name: "BJJ Kids Mini (4 a 7)", tag: "K" },
+        { time: "18:15–19:00", name: "BJJ Kids Junior (8 a 12)", tag: "K" },
+        { time: "19:00–20:30", name: "BJJ Kimono", tag: "F" },
+        { time: "20:30–22:00", name: "BJJ NoGi", tag: "A" },
       ],
     },
     {
-      time: "21:00–22:00",
-      cells: [
-        "Open Mat",
-        "BJJ Mujeres (Específico)",
-        "Open Mat",
-        "Open Mat",
-        "Open Mat",
+      day: "Viernes",
+      classes: [
+        { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "11:00–12:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "14:15–15:45", name: "BJJ Lunch NoGi", tag: "AL" },
+        { time: "17:30–18:15", name: "BJJ Kids Mini (4 a 7)", tag: "K" },
+        { time: "18:15–19:00", name: "BJJ Kids Junior (8 a 12)", tag: "K" },
+        { time: "19:00–20:30", name: "Open Mat (Ipanema)", tag: "OPEN" },
       ],
     },
-  ] satisfies ScheduleRow[],
+    {
+      day: "Sábado",
+      classes: [
+        { time: "11:00–12:30", name: "Open Mat (abierto)", tag: "OPEN" },
+      ],
+    },
+  ] satisfies { day: string; classes: ScheduleClass[] }[],
   note:
-    "Entre las 15:45 y las 19:30 hay clases de Kids, Fundamentos y Mujeres (Específico). Horario exacto de esa franja y del sábado " +
-    PENDIENTE +
-    ". Primera clase siempre gratuita.",
+    "Horario sujeto a cambios por eventos o necesidades del equipo. Apúntate siempre a las clases desde la app de Ipanema BJJ.",
 };
 
 export const location = {
