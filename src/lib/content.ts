@@ -202,7 +202,6 @@ export const achievements = {
   ],
   affiliation: {
     images: [
-      "/images/coach-competicion-1.jpg",
       "/images/coach-competicion-2.jpg",
       "/images/coach-competicion-3.jpg",
     ],
