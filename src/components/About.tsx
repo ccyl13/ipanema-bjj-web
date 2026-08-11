@@ -13,6 +13,12 @@ export function About() {
           <p className="mt-5 font-script text-3xl leading-snug text-white sm:text-4xl">
             &ldquo;{manifesto.quote}&rdquo;
           </p>
+          <p className="mt-6 text-xs font-bold tracking-[0.3em] text-lime uppercase">
+            🌴 {manifesto.lifestyleLabel}
+          </p>
+          <p className="mt-2 text-lg font-semibold text-white">
+            {manifesto.tagline}
+          </p>
         </Reveal>
 
         <div className="mt-20 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">

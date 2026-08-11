@@ -3,6 +3,7 @@ import { Trophy } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WaveDivider } from "./WaveDivider";
 import { TiltCard } from "./TiltCard";
+import { ImageCrossfade } from "./ImageCrossfade";
 import { achievements } from "@/lib/content";
 
 export function Achievements() {
@@ -26,12 +27,9 @@ export function Achievements() {
           className="mt-10 grid items-center gap-8 overflow-hidden rounded-2xl border border-wood/40 bg-gradient-to-br from-wood/10 via-ink to-ink lg:grid-cols-2"
         >
           <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:h-full lg:min-h-[320px]">
-            <Image
-              src={achievements.affiliation.image}
+            <ImageCrossfade
+              images={achievements.affiliation.images}
               alt={achievements.affiliation.imageAlt}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-top"
             />
           </div>
           <div className="p-6 sm:p-10 lg:pl-0">

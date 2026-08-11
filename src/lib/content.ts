@@ -50,19 +50,23 @@ export const hero = {
 export const manifesto = {
   heading: "Nuestro manifiesto",
   quote:
-    "El Jiu-Jitsu es el arte de la suavidad que convierte la fuerza del adversario en tu propia ventaja.",
+    "No solo entrenamos. Vivimos el Jiu-Jitsu. Entrenamos para ser mejores, dentro y fuera del tatami. Creemos en la disciplina, el respeto, el buen rollo y en una comunidad donde cada persona importa. Porque al final, el verdadero cinturón negro se construye compartiendo el camino.",
+  lifestyleLabel: "Ipanema Lifestyle",
+  tagline: "Entrena. Conecta. Evoluciona.",
 };
 
 export const about = {
   heading: "Sobre nosotros",
-  kicker: "El profesor",
-  name: "José-Luis",
+  kicker: "El head coach",
+  name: "José Luis",
   nickname: "Zezinho",
   belt: "Cinturón negro, Mathias Ribeiro BJJ Team",
   bio: [
-    "José-Luis, conocido en el tatami como \"Zezinho\", es el profesor principal de Ipanema BJJ Gijón y cinturón negro dentro del Mathias Ribeiro BJJ Team.",
-    "Con años de experiencia sobre el tatami, José-Luis construyó Ipanema BJJ como un sitio donde se entrena en serio pero se cuida a cada alumno, desde quien pisa un tatami por primera vez hasta quien compite a nivel europeo.",
-    "También ofrece clases privadas para quien quiera acelerar su progreso con atención 1 a 1.",
+    "El Jiu-Jitsu cambió mi vida. Ipanema nació para ayudar a cambiar la de otras personas.",
+    "Como cinturón negro de Mathias Ribeiro BJJ Team, mi objetivo nunca fue abrir una academia más.",
+    "Quería crear un lugar donde se entrenara fuerte, se respirara buen ambiente y cualquier persona pudiera sentirse en casa desde el primer día.",
+    "Aquí formamos competidores cuando alguien quiere competir. Pero, sobre todo, formamos personas que disfrutan del camino.",
+    "Porque el mejor cinturón no es el que llevas en la cintura. Es la persona en la que te conviertes durante el proceso.",
   ],
   images: [
     { src: "/images/profesor-blanco-frente.jpg", alt: "José-Luis con el gi blanco de Ipanema BJJ" },
@@ -184,24 +188,35 @@ export const achievements = {
   intro:
     "Ipanema BJJ es filial del Mathias Ribeiro BJJ Team, uno de los equipos de referencia del Jiu-Jitsu brasileño en España. Nuestros alumnos e instructores compiten y suben al podio.",
   highlights: [
-    "Campeonato de España de Jiu-Jitsu",
-    "Campeonato de Europa (IBJJF)",
     "Madrid Cup BJJ",
-    "NTL Pro",
+    "Campeonato de España 2025",
+    "NTL Pro 2021-2022",
+    "European Jiu-Jitsu 2022",
+    "INTL Pro 2021-2022",
+    "12º Campeonato España Jiu-Jitsu Brasileño AEJJB 2021",
+    "International Master Europe 2022",
+    "Campeonato de España Jiu-Jitsu Brasileño",
+    "European Jiu-Jitsu IBJJF Championship 2018",
+    "Campeonato de España de BJJ 2025",
+    "Madrid Open IBJJF",
   ],
   affiliation: {
-    image: "/images/mathias-ribeiro-topuria.jpg",
-    imageAlt: "Mathias Ribeiro junto a Ilia Topuria, campeón de la UFC",
-    heading: "El equipo detrás de un campeón de la UFC",
-    text: "Mathias Ribeiro y Mani Tavanaei, fundadores del Mathias Ribeiro BJJ Team, son los entrenadores principales de grappling y Jiu-Jitsu brasileño de Ilia Topuria. Suyo es el trabajo de perfeccionar el juego de suelo, las sumisiones y el control posicional del campeón de la UFC.",
+    images: [
+      "/images/coach-competicion-1.jpg",
+      "/images/coach-competicion-2.jpg",
+      "/images/coach-competicion-3.jpg",
+    ],
+    imageAlt: "José Luis \"Zezinho\" en competición de Jiu-Jitsu Brasileño",
+    heading: "Una academia local. Un equipo de élite.",
+    text: "Ipanema BJJ Gijón es filial oficial del Mathias Ribeiro BJJ Team, que con múltiples sedes en España se ha consolidado como uno de los equipos más fuertes del panorama español y europeo. Su metodología ha formado competidores de alto nivel y ha llevado a sus entrenadores a trabajar con deportistas de élite, entre ellos Ilia Topuria, campeón de la UFC. Entrenar en Ipanema significa formar parte de esa misma estructura técnica y compartir los valores de un equipo que apuesta por la excelencia, el respeto y la evolución constante. Lo mejor del BJJ mundial, aplicado cada día en nuestro tatami.",
   },
   image: "/images/medallas-pared.jpg",
 };
 
 export const team = {
-  heading: "El equipo",
+  heading: "Profesores y compañeros de viaje",
   intro:
-    "Detrás de cada clase hay un equipo de cinturones que entrena, compite y enseña codo a codo con los alumnos.",
+    "En Ipanema creemos que un gran equipo se construye mucho antes de subir al podio. Por eso nuestros instructores no solo enseñan Jiu-Jitsu; acompañan, corrigen, motivan y siguen aprendiendo junto a cada alumno. Competimos, sí. Pero también reímos, viajamos, celebramos cinturones, recibimos a quien llega por primera vez y apoyamos a quien más lo necesita. Eso también es entrenar. Eso también es Ipanema.",
   image: "/images/equipo-grupo.jpg",
 };
 
