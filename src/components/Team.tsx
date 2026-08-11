@@ -7,7 +7,7 @@ export function Team() {
     <section className="bg-ink py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-xs font-bold tracking-[0.3em] text-teal uppercase">
+          <h2 className="text-sm font-bold tracking-[0.3em] text-teal uppercase">
             Equipo
           </h2>
           <p className="mt-4 text-3xl font-semibold text-white sm:text-4xl">

@@ -24,7 +24,7 @@ export const nav = [
 ];
 
 export const contact = {
-  email: "info@academiabjj.com",
+  email: "ipanemabjjgijon@gmail.com",
   phone: "683 62 71 13",
   phoneIntl: "+34683627113", // para tel: / wa.me, sin espacios
   whatsappUrl: "https://wa.me/34683627113",
