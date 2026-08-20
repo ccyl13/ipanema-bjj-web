@@ -17,19 +17,19 @@ export function Recovery() {
           <p className="mt-4 text-white/60">{recovery.intro}</p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-12 flex justify-center">
           {recovery.items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.1}>
+            <Reveal key={item.title} delay={i * 0.1} className="w-full max-w-sm">
               <TiltCard
                 maxTilt={3}
                 className="overflow-hidden rounded-2xl border border-line bg-ink"
               >
-                <div className="relative aspect-[3/4] w-full bg-ink">
+                <div className="relative aspect-[2/3] w-full bg-ink">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    sizes="(min-width: 640px) 320px, 80vw"
+                    sizes="(min-width: 640px) 384px, 80vw"
                     className="object-contain p-6"
                   />
                 </div>

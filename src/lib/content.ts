@@ -124,14 +124,9 @@ export const recovery = {
     "En Ipanema la experiencia te acompaña incluso después de entrenar. Tienes café recién hecho, una selección de bebidas refrescantes e isotónicas y algo con lo que reponer fuerzas antes de irte.",
   items: [
     {
-      image: "/images/bebidas-nevera.jpg",
-      title: "Bebidas frías e isotónicas",
-      text: "Nevera siempre surtida con NOCCO, Vitamin Well y batidos, para recuperar electrolitos después del esfuerzo.",
-    },
-    {
-      image: "/images/warrior-flapjack.png",
-      title: "Barritas de proteína Warrior",
-      text: "Raw Protein Flapjack: 20 g de proteína y menos de 4 g de azúcar por barrita, para un buen empujón de energía sin el bajón posterior.",
+      image: "/images/recovery-corner.jpg",
+      title: "Recovery Corner",
+      text: "Bebidas frías e isotónicas y barritas de proteína Warrior, siempre disponibles para recuperar después del esfuerzo.",
     },
   ],
 };
