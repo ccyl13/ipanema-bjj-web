@@ -129,6 +129,11 @@ export const recovery = {
       text: "Bebidas frías e isotónicas y barritas de proteína Warrior, siempre disponibles para recuperar después del esfuerzo.",
     },
   ],
+  features: [
+    "Nevera siempre surtida: agua, refrescos e isotónicas",
+    "Barritas de proteína Warrior Raw Protein Oat Bar",
+    "Combo Recovery a precio especial: bebida + barrita",
+  ],
 };
 
 export type Program = {
