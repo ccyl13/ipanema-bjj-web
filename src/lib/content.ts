@@ -347,12 +347,12 @@ export const bonos = {
     {
       name: "Bono Nómada",
       price: "50€",
-      priceNote: "Clases ilimitadas durante tu estancia",
+      priceNote: "7 días, clases ilimitadas",
       description:
-        "Para viajeros y practicantes de paso por Gijón: paga una vez y entrena todas las clases que quieras mientras dure tu visita. Pensado para estancias cortas, no para temporadas largas.",
+        "Para viajeros y practicantes de paso por Gijón: si estás una semana de vacaciones o de visita, entrena todas las clases que quieras esos 7 días.",
       features: [
-        "Clases ilimitadas",
-        "Válido durante tu estancia",
+        "7 días de acceso",
+        "Clases ilimitadas esos 7 días",
         "Ideal si vienes de fuera",
       ],
       highlight: true,
