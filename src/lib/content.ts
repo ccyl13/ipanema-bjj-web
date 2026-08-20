@@ -19,7 +19,7 @@ export const nav = [
   { label: "Palmarés", href: "/#palmares" },
   { label: "Horarios", href: "/#horarios" },
   { label: "Ubicación", href: "/#ubicacion" },
-  { label: "Tienda", href: "/tienda" },
+  { label: "Bonos", href: "/bonos" },
   { label: "Seminarios", href: "/seminarios" },
 ];
 
@@ -322,24 +322,43 @@ export const finalCta = {
   secondary: { label: "Ver programas", href: "#programas" },
 };
 
-export const tienda = {
-  heading: "Tienda",
+export const bonos = {
+  heading: "Bonos",
   intro:
-    "Kimonos y rashguards del equipo, en varias tallas y colores. Si estás empezando, no hace falta que te compres un gi antes de venir: en tu primera clase te dejamos uno.",
-  products: [
+    "Sin permanencia. Elige el bono que mejor se ajuste a tu ritmo de entrenamiento, o al Bono Nómada si estás de paso por Gijón.",
+  plans: [
     {
-      name: "Gi Ipanema BJJ",
+      name: "Bono 5 clases",
+      price: "45€",
+      priceNote: "9€ / clase",
       description:
-        "Kimono oficial del equipo, algodón trenzado de alta densidad. Disponible en blanco y negro.",
-      image: "/images/kimonos-percha.jpg",
+        "Para entrenar a tu ritmo, sin atarte a un horario fijo cada semana.",
+      features: ["5 clases", "Válido para cualquier programa", "Sin caducidad estricta"],
+      highlight: false,
     },
     {
-      name: "Detalle del bordado",
-      description: "Bordado de la palmera en el pecho y en la manga.",
-      image: "/images/profesor-blanco-brazos.jpg",
+      name: "Bono 10 clases",
+      price: "90€",
+      priceNote: "9€ / clase",
+      description: "El más habitual entre quienes entrenan varias veces por semana.",
+      features: ["10 clases", "Válido para cualquier programa", "Sin caducidad estricta"],
+      highlight: false,
+    },
+    {
+      name: "Bono Nómada",
+      price: "50€",
+      priceNote: "1 semana, clases ilimitadas",
+      description:
+        "Para viajeros y practicantes de paso: si estás una semana de vacaciones o de visita en Gijón, entrena todas las clases que quieras.",
+      features: [
+        "7 días de acceso",
+        "Clases ilimitadas esa semana",
+        "Ideal si vienes de fuera",
+      ],
+      highlight: true,
     },
   ],
-  note: "La tienda online está en desarrollo. Mientras tanto, resérvalo contactando directamente con la academia.",
+  note: "Todos los bonos se abonan y activan directamente en la academia. Escríbenos por WhatsApp para reservar el tuyo.",
 };
 
 export const seminarios = {
