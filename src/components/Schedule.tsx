@@ -4,9 +4,8 @@ import { schedule, scheduleLegend, type ClassTag } from "@/lib/content";
 const TIME_SLOTS = [
   "08:00–09:30",
   "11:00–12:30",
-  "14:15–15:45",
-  "17:30–18:15",
-  "18:15–19:00",
+  "14:15–15:30",
+  "17:30–18:30",
   "19:00–20:30",
   "20:30–22:00",
   "22:00–22:30",
@@ -19,8 +18,7 @@ const tagCellStyles: Record<ClassTag, string> = {
   K: "bg-lime/10 border-l-lime text-lime",
   W: "bg-pink-400/10 border-l-pink-400 text-pink-400",
   F: "bg-wood/10 border-l-wood text-wood",
-  A: "bg-orange-400/10 border-l-orange-400 text-orange-400",
-  PRIVATE: "bg-white/5 border-l-white/30 text-white/60",
+  LL: "bg-orange-400/10 border-l-orange-400 text-orange-400",
   OPEN: "bg-white/[0.03] border-l-white/15 text-white/40",
 };
 
@@ -32,8 +30,7 @@ const tagDotStyles: Record<ClassTag, string> = {
   K: "bg-lime",
   W: "bg-pink-400",
   F: "bg-wood",
-  A: "bg-orange-400",
-  PRIVATE: "bg-white/60",
+  LL: "bg-orange-400",
   OPEN: "border-2 border-white/40",
 };
 

@@ -219,8 +219,8 @@ export const team = {
   image: "/images/equipo-grupo.jpg",
 };
 
-// Horario real 2026, tomado directamente del cuadrante que usa la academia.
-export type ClassTag = "AL" | "K" | "W" | "F" | "A" | "PRIVATE" | "OPEN";
+// Horario de clases 2026, tomado directamente del cuadrante oficial de la academia.
+export type ClassTag = "AL" | "K" | "W" | "F" | "LL" | "OPEN";
 
 export type ScheduleClass = {
   time: string;
@@ -230,11 +230,10 @@ export type ScheduleClass = {
 
 export const scheduleLegend: { tag: ClassTag; label: string }[] = [
   { tag: "AL", label: "Todos los niveles" },
-  { tag: "K", label: "Kids" },
-  { tag: "W", label: "Mujeres" },
-  { tag: "F", label: "Fundamentos" },
-  { tag: "A", label: "Avanzado" },
-  { tag: "PRIVATE", label: "Clase privada" },
+  { tag: "K", label: "Kids (Mini 4-7 / Junior 8-12)" },
+  { tag: "W", label: "Exclusivo femenino" },
+  { tag: "F", label: "Fundamentos básicos" },
+  { tag: "LL", label: "NoGi Leglock Lab" },
   { tag: "OPEN", label: "Open Mat" },
 ];
 
@@ -246,11 +245,10 @@ export const schedule = {
       classes: [
         { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
         { time: "11:00–12:30", name: "BJJ NoGi", tag: "AL" },
-        { time: "14:15–15:45", name: "BJJ Lunch Kimono", tag: "AL" },
-        { time: "17:30–18:15", name: "Clase privada", tag: "PRIVATE" },
-        { time: "18:15–19:00", name: "Clase privada", tag: "PRIVATE" },
-        { time: "19:00–20:30", name: "Grupo Femenino", tag: "W" },
-        { time: "20:30–22:00", name: "BJJ Kimono", tag: "A" },
+        { time: "14:15–15:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "17:30–18:30", name: "Kids Junior (8-12)", tag: "K" },
+        { time: "19:00–20:30", name: "Femenino (Kimono)", tag: "W" },
+        { time: "20:30–22:00", name: "BJJ Kimono", tag: "AL" },
         { time: "22:00–22:30", name: "Open Mat (Ipanema)", tag: "OPEN" },
       ],
     },
@@ -259,11 +257,10 @@ export const schedule = {
       classes: [
         { time: "08:00–09:30", name: "BJJ NoGi", tag: "AL" },
         { time: "11:00–12:30", name: "BJJ Kimono", tag: "AL" },
-        { time: "14:15–15:45", name: "BJJ Lunch NoGi", tag: "AL" },
-        { time: "17:30–18:15", name: "BJJ Kids Mini (4 a 7)", tag: "K" },
-        { time: "18:15–19:00", name: "BJJ Kids Junior (8 a 12)", tag: "K" },
-        { time: "19:00–20:30", name: "BJJ Kimono", tag: "F" },
-        { time: "20:30–22:00", name: "BJJ NoGi", tag: "A" },
+        { time: "14:15–15:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "17:30–18:30", name: "Kids Mini (4-7)", tag: "K" },
+        { time: "19:00–20:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "20:30–22:00", name: "NoGi Leglock Lab", tag: "LL" },
       ],
     },
     {
@@ -271,11 +268,10 @@ export const schedule = {
       classes: [
         { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
         { time: "11:00–12:30", name: "BJJ Laboratorio", tag: "AL" },
-        { time: "14:15–15:45", name: "BJJ Lunch Kimono", tag: "AL" },
-        { time: "17:30–18:15", name: "Clase privada", tag: "PRIVATE" },
-        { time: "18:15–19:00", name: "Clase privada", tag: "PRIVATE" },
-        { time: "19:00–20:30", name: "BJJ NoGi", tag: "F" },
-        { time: "20:30–22:00", name: "BJJ Kimono", tag: "A" },
+        { time: "14:15–15:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "17:30–18:30", name: "Kids Junior (8-12)", tag: "K" },
+        { time: "19:00–20:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "20:30–22:00", name: "BJJ Kimono", tag: "AL" },
         { time: "22:00–22:30", name: "Open Mat (Ipanema)", tag: "OPEN" },
       ],
     },
@@ -284,11 +280,10 @@ export const schedule = {
       classes: [
         { time: "08:00–09:30", name: "BJJ NoGi", tag: "AL" },
         { time: "11:00–12:30", name: "BJJ Kimono", tag: "AL" },
-        { time: "14:15–15:45", name: "BJJ Lunch NoGi", tag: "AL" },
-        { time: "17:30–18:15", name: "BJJ Kids Mini (4 a 7)", tag: "K" },
-        { time: "18:15–19:00", name: "BJJ Kids Junior (8 a 12)", tag: "K" },
-        { time: "19:00–20:30", name: "BJJ Kimono", tag: "F" },
-        { time: "20:30–22:00", name: "BJJ NoGi", tag: "A" },
+        { time: "14:15–15:30", name: "BJJ NoGi", tag: "AL" },
+        { time: "17:30–18:30", name: "Kids Mini (4-7)", tag: "K" },
+        { time: "19:00–20:30", name: "BJJ Kimono", tag: "AL" },
+        { time: "20:30–22:00", name: "NoGi Leglock Lab", tag: "LL" },
       ],
     },
     {
@@ -296,9 +291,6 @@ export const schedule = {
       classes: [
         { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
         { time: "11:00–12:30", name: "BJJ NoGi", tag: "AL" },
-        { time: "14:15–15:45", name: "BJJ Lunch NoGi", tag: "AL" },
-        { time: "17:30–18:15", name: "BJJ Kids Mini (4 a 7)", tag: "K" },
-        { time: "18:15–19:00", name: "BJJ Kids Junior (8 a 12)", tag: "K" },
         { time: "19:00–20:30", name: "Open Mat (Ipanema)", tag: "OPEN" },
       ],
     },
