@@ -291,7 +291,7 @@ export const schedule = {
       classes: [
         { time: "08:00–09:30", name: "BJJ Kimono", tag: "AL" },
         { time: "11:00–12:30", name: "BJJ NoGi", tag: "AL" },
-        { time: "19:00–20:30", name: "BJJ Laboratorio", tag: "OPEN" },
+        { time: "19:00–20:30", name: "BJJ Laboratorio", tag: "AL" },
       ],
     },
     {
